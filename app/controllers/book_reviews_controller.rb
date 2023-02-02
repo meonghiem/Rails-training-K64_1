@@ -8,7 +8,7 @@ class BookReviewsController < ApplicationController
 
   # GET /book_reviews/1 or /book_reviews/1.json
   def show
-      @book_review = BookReview.new
+      @book_review.user_id = current_user.user_id
   end
 
   # GET /book_reviews/new
@@ -28,6 +28,7 @@ class BookReviewsController < ApplicationController
 
     respond_to do |format|
       if @book_review.save
+        url = "/books/" + @book_review.book_id.to_s
         format.html { redirect_to book_review_url(@book_review), notice: "Book review was successfully created." }
         format.json { render :show, status: :created, location: @book_review }
       else

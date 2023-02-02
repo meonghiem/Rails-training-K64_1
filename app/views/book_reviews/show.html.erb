@@ -20,15 +20,8 @@
      <%= image_tag @book_review.image %>
    <% end %>
  </p>
-<h2>Review Form</h2>
- <%= form_with(model: @book_review, local:true) do |form| %>
- <div class="field">
-    <%= form.text_area:review %>
-    <%= form.hidden_field :book_id, :value => @book.id %>
- </div>
- <div class="actions">
-     <%= form.submit %>
- </div>
+
+ 
 
 <%= link_to 'Edit', edit_book_review_path(@book_review) %> |
 <%= link_to 'Back', book_reviews_path %>
