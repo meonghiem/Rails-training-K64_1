@@ -16,10 +16,9 @@
 </p>
 
 <p>
-   <% if @book_review.image.attached? %>
-     <%= image_tag @book_review.image %>
-   <% end %>
- </p>
+  <strong>Review:</strong>
+  <%= @book_review.review %>
+</p>
 
  
 

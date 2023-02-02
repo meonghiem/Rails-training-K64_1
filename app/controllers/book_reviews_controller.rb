@@ -8,7 +8,6 @@ class BookReviewsController < ApplicationController
 
   # GET /book_reviews/1 or /book_reviews/1.json
   def show
-      @book_review.user_id = current_user.user_id
   end
 
   # GET /book_reviews/new
